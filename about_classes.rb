@@ -50,7 +50,7 @@ class AboutClasses < Neo::Koan
     fido = Dog2.new
     fido.set_name("Fido")
 
-    assert_equal 'Fido', fido.instance_eval('@name')  # string version
+    assert_equal 'Fido', fido.instance_eval('@name') # string version
     assert_equal 'Fido', fido.instance_eval { @name } # block version
   end
 
@@ -60,6 +60,7 @@ class AboutClasses < Neo::Koan
     def set_name(a_name)
       @name = a_name
     end
+
     def name
       @name
     end
@@ -108,6 +109,7 @@ class AboutClasses < Neo::Koan
 
   class Dog6
     attr_reader :name
+
     def initialize(initial_name)
       @name = initial_name
     end
@@ -178,7 +180,7 @@ class AboutClasses < Neo::Koan
   end
 
   def test_all_objects_support_to_s_and_inspect
-    array = [1,2,3]
+    array = [1, 2, 3]
 
     assert_equal '[1, 2, 3]', array.to_s
     assert_equal '[1, 2, 3]', array.inspect
