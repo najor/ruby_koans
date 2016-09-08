@@ -6,7 +6,27 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 #   code ...
 # end
 
+
 class AboutDiceProject < Neo::Koan
+  class DiceSet
+    attr_reader :values
+
+    attr_reader :r
+
+    def initialize
+      @values = []
+      @r = Random.new
+    end
+
+    def roll(int)
+      @values = []
+      int.times do
+        @values << @r.rand(1..6)
+      end
+    end
+
+  end
+
   def test_can_create_a_dice_set
     dice = DiceSet.new
     assert_not_nil dice
@@ -41,7 +61,7 @@ class AboutDiceProject < Neo::Koan
     second_time = dice.values
 
     assert_not_equal first_time, second_time,
-      "Two rolls should not be equal"
+                     "Two rolls should not be equal"
 
     # THINK ABOUT IT:
     #
