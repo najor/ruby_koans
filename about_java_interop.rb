@@ -14,17 +14,17 @@ include Java
 class AboutJavaInterop < Neo::Koan
   def test_using_a_java_library_class
     java_array = java.util.ArrayList.new
-    assert_equal __, java_array.class
+    assert_equal ArrayList, java_array.class
   end
 
   def test_java_class_can_be_referenced_using_both_ruby_and_java_like_syntax
-    assert_equal __, Java::JavaUtil::ArrayList == java.util.ArrayList
+    assert_equal true, Java::JavaUtil::ArrayList == java.util.ArrayList
   end
 
   def test_include_class_includes_class_in_module_scope
     assert_nil defined?(TreeSet)
     include_class "java.util.TreeSet"
-    assert_equal __, defined?(TreeSet)
+    assert_equal true, defined?(TreeSet)
   end
 
   # THINK ABOUT IT:
@@ -40,8 +40,8 @@ class AboutJavaInterop < Neo::Koan
   JString = java.lang.String
   def test_also_java_class_can_be_given_ruby_aliases
     java_string = JString.new("A Java String")
-    assert_equal __, java_string.class
-    assert_equal __, JString
+    assert_equal JString, java_string.class
+    assert_equal JString, JString
   end
 
   def test_can_directly_call_java_methods_on_java_objects

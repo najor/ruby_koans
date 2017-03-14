@@ -18,7 +18,7 @@ scored according to the following:
   One   1   =>  100 points
   One   5   =>   50 points
 
-A single dice can only be counted once in each roll.  For example,
+A single die can only be counted once in each roll.  For example,
 a "5" can only count as part of a triplet (contributing to the 500
 points) or as a single 50 points, but not both in the same roll.
 
@@ -32,7 +32,7 @@ Example Scoring
 
 The dice not contributing to the score are called the non-scoring
 dice.  "3" and "4" are non-scoring dice in the first example.  "3" is
-a non-scoring dice in the second, and "2" is a non-score die in the
+a non-scoring die in the second, and "2" is a non-score die in the
 final example.
 
 After a player rolls and the score is calculated, the scoring dice are
